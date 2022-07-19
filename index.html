@@ -20,6 +20,9 @@
     <div style="width: 80%">
         <py-contactlist id="guestBook"></py-contactlist>
         <py-inputbox id="new_entry">
+            from pyodide import create_proxy
+
+            @create_proxy
             def on_keypress(e):
                 if(e.code == "Enter"):
                     add_contact()
@@ -28,6 +31,9 @@
         <br/>
         <br/>
         <py-button id="new-guest-btn" label="Add Guest">
+            from pyodide import create_proxy
+
+            @create_proxy
             def on_click(evt):
                 add_contact()
         </py-button>
